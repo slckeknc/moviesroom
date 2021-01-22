@@ -43,7 +43,8 @@ const AboutUsPage = () => {
 
   return (
     <Layout>
-      <Wrapper describtionColor={COLORS.PRIMARY}>
+      <SEO title="About Us" />
+      <Wrapper descriptionColor={COLORS.PRIMARY}>
         <div className="banner">
           <Image
             fluid={aboutUsPageHeaderPicture.imageFile.childImageSharp.fluid}
@@ -54,7 +55,7 @@ const AboutUsPage = () => {
         <div className="description">
           <h2 style={{ justifyContent: "center" }}>About Us</h2>
           <p>{aboutUsPageDescription}</p>
-          <BottomEdgeUp color={COLORS.PRIMARY} />
+          <BottomEdgeUp color={COLORS.SECONDARY} />
         </div>
       </Wrapper>
     </Layout>
