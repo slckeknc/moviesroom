@@ -126,7 +126,7 @@ export const Wrapper = styled.div`
     }
   }
 
-  .artists {
+  .movies {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,7 +149,7 @@ export const Wrapper = styled.div`
       }
     }
 
-    .artist-items {
+    .movie-items {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -160,7 +160,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const Artist = styled(Link)`
+export const Movie = styled(Link)`
   display: flex;
   position: relative;
   width: 22vw;
@@ -178,7 +178,7 @@ export const Artist = styled(Link)`
   &:hover {
     transform: scale(1.05);
 
-    .artist-info {
+    .movie-info {
       height: 100%;
       background-color: ${COLORS.TERTIARY + "c0"};
 
@@ -188,7 +188,7 @@ export const Artist = styled(Link)`
     }
   }
 
-  .artist-info {
+  .movie-info {
     display: flex;
     flex-direction: column;
     position: absolute;
