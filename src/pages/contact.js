@@ -20,8 +20,6 @@ const Contact = () => {
           contactPageCity,
           contactPageDescription,
           contactPageEmail,
-          contactPageLatitude,
-          contactPageLongitude,
           contactPagePhone,
           contactPagePostcode,
           contactPageHeaderPicture,
@@ -37,8 +35,6 @@ const Contact = () => {
             contactPageCity
             contactPageDescription
             contactPageEmail
-            contactPageLatitude
-            contactPageLongitude
             contactPagePhone
             contactPagePostcode
             contactPageHeaderPicture {

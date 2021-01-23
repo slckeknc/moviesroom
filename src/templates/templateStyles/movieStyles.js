@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
 import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../../constants"
 
 export const Wrapper = styled.div`
@@ -20,7 +19,6 @@ export const Wrapper = styled.div`
     .movie-image {
       position: relative;
       width: 40vw;
-      height: 40vw;
 
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         height: 90vw;
@@ -28,7 +26,7 @@ export const Wrapper = styled.div`
         border-bottom: solid 15px ${COLORS.PRIMARY};
       }
 
-      .roles {
+      .genres {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -47,7 +45,7 @@ export const Wrapper = styled.div`
           border-right: solid 5px ${COLORS.PRIMARY};
         }
 
-        .role {
+        .genre {
           padding: 1rem 1.5rem;
         }
       }
@@ -58,7 +56,6 @@ export const Wrapper = styled.div`
       flex-direction: column;
       width: 60vw;
       padding: 1.5rem 2rem;
-
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
         width: 100%;
       }

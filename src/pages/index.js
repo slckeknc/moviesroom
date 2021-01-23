@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
@@ -49,17 +49,10 @@ const IndexPage = () => {
               ... on WPGraphql_Movie {
                 movie {
                   title
-                  plot
                   director
                   duration
                   imdbRating
-                  releaseYear
-                  genre {
-                    name
-                  }
                   poster {
-                    altText
-                    slug
                     sourceUrl
                     imageFile {
                       childImageSharp {
@@ -68,8 +61,11 @@ const IndexPage = () => {
                         }
                       }
                     }
+                    altText
                   }
+                  releaseYear
                 }
+                slug
               }
             }
           }
