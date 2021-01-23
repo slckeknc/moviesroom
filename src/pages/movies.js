@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
@@ -6,36 +6,27 @@ import SEO from "../components/Seo"
 import {
   Wrapper,
   Image,
-  Movie,
   BottomEdgeDown,
   BottomEdgeUp,
+  Movie,
 } from "./pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
-const IndexPage = () => {
+const Movies = () => {
   const {
     wpcontent: {
       page: {
-        homePageMeta: {
-          homePageDescription,
-          homePageHeaderDescription,
-          homePageHeaderTitle,
-          homePageHeaderPicture,
-          homePageFeaturedMovies,
-        },
+        moviesMeta: { moviesPageDescription, moviesPageHeaderPicture },
       },
+      movies: { nodes: movies },
     },
   } = useStaticQuery(graphql`
     query {
       wpcontent {
-        page(id: "home", idType: URI) {
-          homePageMeta {
-            homePageDescription
-            homePageHeaderDescription
-            homePageHeaderTitle
-            homePageHeaderPicture {
-              altText
-              slug
+        page(id: "movies", idType: URI) {
+          moviesMeta {
+            moviesPageDescription
+            moviesPageHeaderPicture {
               sourceUrl
               imageFile {
                 childImageSharp {
@@ -44,34 +35,31 @@ const IndexPage = () => {
                   }
                 }
               }
+              altText
             }
-            homePageFeaturedMovies {
-              ... on WPGraphql_Movie {
-                movie {
-                  title
-                  plot
-                  director
-                  duration
-                  imdbRating
-                  releaseYear
-                  genre {
-                    name
-                  }
-                  poster {
-                    altText
-                    slug
-                    sourceUrl
-                    imageFile {
-                      childImageSharp {
-                        fluid(quality: 100) {
-                          ...GatsbyImageSharpFluid_withWebp
-                        }
-                      }
+          }
+        }
+        movies {
+          nodes {
+            movie {
+              title
+              director
+              duration
+              imdbRating
+              poster {
+                sourceUrl
+                imageFile {
+                  childImageSharp {
+                    fluid(quality: 100) {
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }
+                altText
               }
+              releaseYear
             }
+            slug
           }
         }
       }
@@ -80,26 +68,23 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
-      <Wrapper>
+      <SEO title="Movies" />
+      <Wrapper movieColor={COLORS.BLACK} descriptionColor={COLORS.SECONDARY}>
         <div className="banner">
           <Image
-            fluid={homePageHeaderPicture.imageFile.childImageSharp.fluid}
-            alt={homePageHeaderPicture.altText}
+            fluid={moviesPageHeaderPicture.imageFile.childImageSharp.fluid}
+            alt={moviesPageHeaderPicture.altText}
           />
-          <div className="inner-div">
-            <p className="header-title">{homePageHeaderTitle}</p>
-            <p className="header-description">{homePageHeaderDescription}</p>
-          </div>
-          <BottomEdgeDown color={COLORS.BLACK} />
+          <BottomEdgeDown color={COLORS.SECONDARY} />
         </div>
         <div className="description">
-          <p>{homePageDescription}</p>
+          <h2 style={{ justifyContent: "center" }}>Movies</h2>
+          <p>{moviesPageDescription}</p>
           <BottomEdgeUp color={COLORS.PRIMARY} />
         </div>
         <div className="movies">
           <div className="movie-items">
-            {homePageFeaturedMovies.map(({ movie, slug }) => (
+            {movies.map(({ movie, slug }) => (
               <Movie to={`/${slug}`} key={movie.title}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
@@ -123,4 +108,5 @@ const IndexPage = () => {
     </Layout>
   )
 }
-export default IndexPage
+
+export default Movies

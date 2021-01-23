@@ -164,7 +164,6 @@ export const Movie = styled(Link)`
   display: flex;
   position: relative;
   width: 22vw;
-  height: 22vw;
   margin: 2vw;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
@@ -185,6 +184,9 @@ export const Movie = styled(Link)`
       p {
         color: ${COLORS.BLACK};
       }
+      .detail {
+        display: block;
+      }
     }
   }
 
@@ -193,25 +195,31 @@ export const Movie = styled(Link)`
     flex-direction: column;
     position: absolute;
     bottom: 0;
-    height: 80px;
+    height: 20%;
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem;
     background-color: ${COLORS.BLACK + "c0"};
     transition: all 0.3s ease-in-out;
 
+    .detail {
+      display: none;
+    }
+
     p {
-      text-transform: uppercase;
       font-size: 1.3rem;
       font-weight: 600;
       color: white;
       margin: 0;
     }
 
+    p:nth-child(1) {
+      text-transform: uppercase;
+    }
+
     p:nth-child(2) {
       color: ${COLORS.SECONDARY};
-
       margin-top: 0.3rem;
     }
   }
