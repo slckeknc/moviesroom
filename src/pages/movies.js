@@ -9,7 +9,7 @@ import {
   BottomEdgeDown,
   BottomEdgeUp,
   Movie,
-} from "./pageStyles/pageStyles"
+} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const Movies = () => {
