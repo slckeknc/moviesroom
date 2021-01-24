@@ -95,8 +95,8 @@ const IndexPage = () => {
         </div>
         <div className="movies">
           <div className="movie-items">
-            {homePageFeaturedMovies.map(({ movie, slug }) => (
-              <Movie to={`/${slug}`} key={movie.title}>
+            {homePageFeaturedMovies.map(({ movie, slug, i }) => (
+              <Movie to={`/${slug}`} key={i}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
                   alt={movie.poster.altText}

@@ -21,7 +21,6 @@ export const Wrapper = styled.div`
       width: 40vw;
 
       @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
-        height: 90vw;
         width: 90vw;
         border-bottom: solid 15px ${COLORS.PRIMARY};
       }
@@ -82,7 +81,6 @@ export const Wrapper = styled.div`
         font-size: 1.8rem;
         text-transform: uppercase;
         margin-left: auto;
-        margin-bottom: auto;
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           font-size: 1.3rem;

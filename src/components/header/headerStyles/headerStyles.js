@@ -58,7 +58,7 @@ export const MenuList = styled.ul`
   }
 
   .nav-active {
-    color: ${COLORS.TERTIARY};
+    color: ${COLORS.PRIMARY};
   }
 `
 
@@ -70,7 +70,7 @@ export const HamburgerButton = styled.div`
   width: 3rem;
   height: 3rem;
   cursor: pointer;
-  color: ${COLORS.TERTIARY};
+  color: ${COLORS.WHITE};
   z-index: 1000;
   transition: all 0.2s ease;
 

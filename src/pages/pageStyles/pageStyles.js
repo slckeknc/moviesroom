@@ -170,7 +170,6 @@ export const Movie = styled(Link)`
 
   @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
     width: 90vw;
-    height: 90vw;
     margin: 2vw 0;
   }
 

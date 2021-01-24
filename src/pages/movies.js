@@ -84,8 +84,8 @@ const Movies = () => {
         </div>
         <div className="movies">
           <div className="movie-items">
-            {movies.map(({ movie, slug }) => (
-              <Movie to={`/${slug}`} key={movie.title}>
+            {movies.map(({ movie, slug, i }) => (
+              <Movie to={`/${slug}`} key={i}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
                   alt={movie.poster.altText}

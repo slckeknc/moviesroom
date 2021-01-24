@@ -22,8 +22,8 @@ const MovieTemplate = ({
               alt={movie.poster.altText}
             />
             <div className="genres">
-              {movie.genre.map(({ name }) => (
-                <div className="genre" key={name}>
+              {movie.genre.map(({ name, i }) => (
+                <div className="genre" key={i}>
                   {name}
                 </div>
               ))}
@@ -31,6 +31,10 @@ const MovieTemplate = ({
           </div>
           <div className="movie-info">
             <h2>{movie.title}</h2>
+            <h3>
+              <span>IMDB: {movie.imdbRating} -</span>{" "}
+              <span>{movie.duration} min</span>
+            </h3>
             <p className="description">{movie.description}</p>
             <p className="info">{movie.plot}</p>
             <p className="info">
@@ -47,9 +51,9 @@ const MovieTemplate = ({
             </p>
 
             <p className="info">
-              <strong>Release Year:</strong> {movie.releaseYear}
+              <strong>Release Date:</strong> {movie.releaseYear}
             </p>
-            {movie.language == "" && (
+            {movie.language === "" && (
               <p className="info">
                 <strong>Language:</strong> {movie.language}
               </p>
