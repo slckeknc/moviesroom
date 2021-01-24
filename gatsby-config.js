@@ -36,7 +36,7 @@ module.exports = {
 
         fieldName: "wpcontent",
 
-        url: "http://moviesroom.local/graphql/",
+        url: "http://moviesroom.colorplateau.be/graphql",
       },
     },
     {
