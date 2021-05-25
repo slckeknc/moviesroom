@@ -1,3 +1,3 @@
 ## 💫 Deployed in Netlify
 
-[![See live on Netlify](https://moviesroom.netlify.app/)
+[See live on Netlify](https://moviesroom.netlify.app/)
